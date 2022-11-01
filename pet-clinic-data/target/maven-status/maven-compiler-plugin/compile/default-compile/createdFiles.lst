@@ -1,0 +1,5 @@
+com\kennshi\petclinic\model\Pet.class
+com\kennshi\petclinic\model\Vet.class
+com\kennshi\petclinic\model\Owner.class
+com\kennshi\petclinic\model\Person.class
+com\kennshi\petclinic\model\PetType.class

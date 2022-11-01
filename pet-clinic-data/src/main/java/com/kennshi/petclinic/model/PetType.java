@@ -1,4 +1,4 @@
-package model;
+package com.kennshi.petclinic.model;
 
 public class PetType {
 
