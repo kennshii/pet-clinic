@@ -1,5 +1,14 @@
+com\kennshi\petclinic\services\map\VetServiceMap.class
 com\kennshi\petclinic\model\Pet.class
+com\kennshi\petclinic\model\Person.class
+com\kennshi\petclinic\services\map\PetServiceMap.class
+com\kennshi\petclinic\services\OwnerService.class
 com\kennshi\petclinic\model\Vet.class
 com\kennshi\petclinic\model\Owner.class
-com\kennshi\petclinic\model\Person.class
+com\kennshi\petclinic\services\VetService.class
+com\kennshi\petclinic\services\map\AbstractMapService.class
+com\kennshi\petclinic\services\PetService.class
 com\kennshi\petclinic\model\PetType.class
+com\kennshi\petclinic\services\map\OwnerServiceMap.class
+com\kennshi\petclinic\model\BaseEntity.class
+com\kennshi\petclinic\services\CrudService.class
