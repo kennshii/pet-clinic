@@ -1,0 +1,5 @@
+com\kennshi\petclinic\bootstrap\DataLoader.class
+com\kennshi\petclinic\PetClinicApplication.class
+com\kennshi\petclinic\controllers\IndexController.class
+com\kennshi\petclinic\controllers\OwnerController.class
+com\kennshi\petclinic\controllers\VetController.class
