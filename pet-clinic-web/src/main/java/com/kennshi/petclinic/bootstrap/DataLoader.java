@@ -1,6 +1,7 @@
 package com.kennshi.petclinic.bootstrap;
 
 import com.kennshi.petclinic.model.Owner;
+import com.kennshi.petclinic.model.Pet;
 import com.kennshi.petclinic.model.PetType;
 import com.kennshi.petclinic.model.Vet;
 import com.kennshi.petclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.kennshi.petclinic.services.PetTypeService;
 import com.kennshi.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -36,12 +39,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("Stefan cel Mare street");
+        owner1.setCity("Chisinau");
+        owner1.setTelephone("123456789");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Ursu");
+        owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Lana");
         owner2.setLastName("Rhodes");
+        owner2.setAddress("Stefan cel Mare street");
+        owner2.setCity("Chisinau");
+        owner2.setTelephone("123456789");
+
+        Pet lanasPet = new Pet();
+        lanasPet.setName("Leonea");
+        lanasPet.setOwner(owner2);
+        lanasPet.setBirthDate(LocalDate.now());
+        lanasPet.setPetType(savedCatPetType);
+        owner2.getPets().add(lanasPet);
 
         ownerService.save(owner2);
 
