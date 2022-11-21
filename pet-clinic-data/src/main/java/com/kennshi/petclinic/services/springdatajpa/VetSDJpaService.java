@@ -1,4 +1,4 @@
-package com.kennshi.petclinic.services.map.springdatajpa;
+package com.kennshi.petclinic.services.springdatajpa;
 
 import com.kennshi.petclinic.model.Vet;
 import com.kennshi.petclinic.repositories.VetRepository;
