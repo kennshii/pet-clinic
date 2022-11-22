@@ -1,4 +1,6 @@
+com\kennshi\petclinic\model\PetType$PetTypeBuilder.class
 com\kennshi\petclinic\repositories\VetRepository.class
+com\kennshi\petclinic\model\Pet$PetBuilder.class
 com\kennshi\petclinic\repositories\VisitRepository.class
 com\kennshi\petclinic\services\VisitService.class
 com\kennshi\petclinic\model\Person.class
@@ -10,11 +12,13 @@ com\kennshi\petclinic\services\OwnerService.class
 com\kennshi\petclinic\model\Vet.class
 com\kennshi\petclinic\model\Owner.class
 com\kennshi\petclinic\services\map\SpecialityMapService.class
+com\kennshi\petclinic\model\Vet$VetBuilder.class
 com\kennshi\petclinic\services\map\AbstractMapService.class
 com\kennshi\petclinic\services\PetService.class
 com\kennshi\petclinic\services\springdatajpa\PetTypeSDJpaService.class
 com\kennshi\petclinic\model\PetType.class
 com\kennshi\petclinic\repositories\OwnerRepository.class
+com\kennshi\petclinic\model\Visit$VisitBuilder.class
 com\kennshi\petclinic\services\map\VisitMapService.class
 com\kennshi\petclinic\services\springdatajpa\SpecialitySDJpaService.class
 com\kennshi\petclinic\services\springdatajpa\OwnerSDJpaService.class
@@ -24,8 +28,10 @@ com\kennshi\petclinic\services\SpecialtyService.class
 com\kennshi\petclinic\services\springdatajpa\PetSDJpaService.class
 com\kennshi\petclinic\services\VetService.class
 com\kennshi\petclinic\model\Speciality.class
+com\kennshi\petclinic\model\Owner$OwnerBuilder.class
 com\kennshi\petclinic\repositories\SpecialtyRepository.class
 com\kennshi\petclinic\model\BaseEntity.class
+com\kennshi\petclinic\model\Speciality$SpecialityBuilder.class
 com\kennshi\petclinic\services\CrudService.class
 com\kennshi\petclinic\services\PetTypeService.class
 com\kennshi\petclinic\services\map\OwnerMapService.class
