@@ -2,6 +2,7 @@ package com.kennshi.petclinic.controllers;
 
 import com.kennshi.petclinic.model.Owner;
 import com.kennshi.petclinic.services.OwnerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,10 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-
+@Slf4j
 @RequestMapping("/owners")
 @Controller
 public class OwnerController {
+    private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
 
     private final OwnerService ownerService;
 
@@ -27,28 +29,29 @@ public class OwnerController {
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
-        dataBinder.setAllowedFields("id");
+        dataBinder.setDisallowedFields("id");
     }
 
-    @RequestMapping({"/find"})
-    public String findOwners(Model model) {
+
+    @RequestMapping("/find")
+    public String findOwners(Model model){
         model.addAttribute("owner", Owner.builder().build());
         return "owners/findOwners";
     }
 
     @GetMapping
-    public String processFindForm(Owner owner, BindingResult result, Model model) {
-
-        if(owner.getLastName() == null) {
-            owner.setLastName("");
+    public String processFindForm(Owner owner, BindingResult result, Model model){
+        // allow parameterless GET request for /owners to return all records
+        if (owner.getLastName() == null) {
+            owner.setLastName(""); // empty string signifies broadest possible search
         }
 
-        //find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+        // find owners by last name
+        List<Owner> results = ownerService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
 
         if (results.isEmpty()) {
             // no owners found
-            result.rejectValue("lastName", "notFound", "notFound");
+            result.rejectValue("lastName", "notFound", "not found");
             return "owners/findOwners";
         } else if (results.size() == 1) {
             // 1 owner found
@@ -62,7 +65,8 @@ public class OwnerController {
     }
 
     @GetMapping("/{ownerId}")
-    public ModelAndView showOwner(@PathVariable("ownerId") Long ownerId) {
+    public ModelAndView showOwner(@PathVariable Long ownerId) {
+        log.debug("showOwner");
         ModelAndView mav = new ModelAndView("owners/ownerDetails");
         mav.addObject(ownerService.findById(ownerId));
         return mav;
